@@ -2,11 +2,13 @@ Config = {}
 
 -- The player-run repair shops. When anyone in one of these jobs is on duty, the
 -- automatic shops stop doing full repairs and point people to the open shops.
-Config.ShopJobs = { 'bennys', 'lscustoms', 'bayareacustoms', 'sandymechanic' }
+-- Damon 2026-10-11: LS Customs plus the two custom-map shops; Benny's is an automatic shop.
+Config.ShopJobs = { 'lscustoms', 'bayareacustoms', 'sandymechanic' }
 
 -- The automatic shops. Each key is also a self-service location in jg-mechanic's
 -- Config.MechanicLocations, so JG runs the full repair when nobody is on duty.
 Config.Shops = {
+    bennys        = { label = "Benny's",          coords = vec3(-211.60, -1324.73, 30.23) },
     auto_lamesa   = { label = 'La Mesa',          coords = vec3(731.81, -1088.82, 22.17) },
     auto_lsia     = { label = 'LSIA',             coords = vec3(-1155.54, -2007.18, 13.18) },
     auto_harmony  = { label = 'Harmony',          coords = vec3(1175.04, 2640.22, 37.75) },
