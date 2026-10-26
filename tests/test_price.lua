@@ -19,12 +19,15 @@ Check('message with two shops', AutoShops.OpenShopsText({ "Benny's Original Moto
     == "Please visit or request a tow to: Benny's Original Motor Works, Los Santos Customs")
 Check('no message when nobody is open', AutoShops.OpenShopsText({}) == '')
 
--- Every automatic shop has a label and coordinates; the four player-run shop jobs are listed.
+-- Every automatic shop has a label and coordinates; the three player-run shop jobs are listed.
 local n = 0
 for id, shop in pairs(Config.Shops) do
     n = n + 1
     Check(id .. ' has a label', type(shop.label) == 'string' and shop.label ~= '')
     Check(id .. ' has coords', shop.coords and shop.coords.x and shop.coords.y and shop.coords.z)
 end
-Check('five automatic shops', n == 5)
-Check('four shop jobs', #Config.ShopJobs == 4)
+Check('six automatic shops (Benny\'s + five GTA garages)', n == 6)
+Check('three shop jobs (LS Customs, Bay Area, Sandy)', #Config.ShopJobs == 3)
+local hasBennysJob = false
+for _, j in ipairs(Config.ShopJobs) do if j == 'bennys' then hasBennysJob = true end end
+Check('Benny\'s is not a player shop', not hasBennysJob)
