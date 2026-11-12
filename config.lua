@@ -13,7 +13,6 @@ Config.Shops = {
     auto_lsia     = { label = 'LSIA',             coords = vec3(-1155.54, -2007.18, 13.18) },
     auto_harmony  = { label = 'Harmony',          coords = vec3(1175.04, 2640.22, 37.75) },
     auto_beekers  = { label = "Beeker's Garage",  coords = vec3(110.99, 6626.40, 31.79) },
-    auto_lombardt = { label = 'Lombardt Bay',     coords = vec3(-87.69, 8103.82, 5.39) },
 }
 
 -- Same numbers as the JG self-service repair (jg-mechanic config, mods.repair).
